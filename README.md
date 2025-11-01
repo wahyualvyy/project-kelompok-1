@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Profile Universitas
 
 Aplikasi profil universitas berbasis Flutter yang menampilkan informasi lengkap tentang universitas, fakultas, dan program studi.
@@ -84,3 +85,306 @@ Kami sangat menghargai kontribusi Anda. Silakan fork repository ini dan buat pul
   - Initial release
   - Fitur dasar profil universitas
   - Navigasi dasar aplikasi
+=======
+# 🎓 Project Profile Universitas
+
+<div align="center">
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+
+**Aplikasi mobile profil universitas yang modern dan informatif**
+
+[Demo](#-screenshots) • [Fitur](#-fitur-aplikasi) • [Instalasi](#-instalasi) • [Kontribusi](#-kontribusi)
+
+</div>
+
+---
+
+## 📖 Tentang Project
+
+Aplikasi **Profile Universitas** adalah platform mobile berbasis Flutter yang dirancang untuk memberikan informasi lengkap dan terstruktur tentang universitas, mencakup profil institusi, fakultas, program studi, galeri kampus, hingga informasi pendaftaran. Aplikasi ini dikembangkan dengan antarmuka yang modern dan user-friendly untuk memudahkan calon mahasiswa, mahasiswa aktif, dan masyarakat umum dalam mengakses informasi universitas.
+
+### ✨ Keunggulan
+
+- 🎨 **Modern UI/UX** - Desain antarmuka yang clean dan intuitif
+- ⚡ **Performance** - Aplikasi ringan dan responsif
+- 📱 **Cross-Platform** - Berjalan di Android dan iOS
+- 🔄 **Real-time Updates** - Informasi selalu ter-update
+- 🌐 **Offline Support** - Dapat diakses tanpa koneksi internet (fitur tertentu)
+
+---
+
+## 🚀 Fitur Aplikasi
+
+### Fitur Utama
+
+| Fitur | Deskripsi |
+|-------|-----------|
+| 🏛️ **Profil Universitas** | Informasi lengkap tentang sejarah, visi, misi, dan akreditasi universitas |
+| 🎓 **Daftar Fakultas** | Katalog semua fakultas dengan detail lengkap |
+| 📚 **Program Studi** | Informasi kurikulum, prospek karir, dan dosen pengajar setiap prodi |
+| 🖼️ **Galeri Kampus** | Foto dan video fasilitas kampus |
+| 📝 **Informasi Pendaftaran** | Panduan lengkap proses pendaftaran mahasiswa baru |
+| 📰 **Berita & Pengumuman** | Update terkini kegiatan kampus |
+
+### Fitur Tambahan (Roadmap)
+
+- [ ] Sistem notifikasi push
+- [ ] Integrasi maps untuk lokasi kampus
+- [ ] Virtual tour 360°
+- [ ] Chatbot asisten informasi
+- [ ] Multi-language support
+
+---
+
+## 🛠️ Teknologi
+
+### Tech Stack
+
+```
+Frontend Framework : Flutter 3.x
+Language          : Dart 3.x
+State Management  : Provider / Bloc (akan ditentukan)
+Backend API       : REST API
+Database          : Firebase / PostgreSQL (akan diimplementasikan)
+```
+
+### Dependencies Utama
+
+- `flutter_bloc` - State management
+- `dio` - HTTP client
+- `cached_network_image` - Image caching
+- `shared_preferences` - Local storage
+- `google_fonts` - Custom fonts
+
+---
+
+## 📥 Instalasi
+
+### Prasyarat
+
+Pastikan sistem Anda telah menginstal:
+
+- ✅ [Flutter SDK](https://flutter.dev/docs/get-started/install) (v3.0 atau lebih baru)
+- ✅ [Dart SDK](https://dart.dev/get-dart) (v3.0 atau lebih baru)
+- ✅ Android Studio / VS Code dengan ekstensi Flutter
+- ✅ Android SDK & Emulator (untuk Android)
+- ✅ Xcode (untuk iOS - khusus macOS)
+
+### Langkah Instalasi
+
+1️⃣ **Clone Repository**
+
+```bash
+git clone https://github.com/wahyualvyy/project-kelompok-1.git
+cd project-kelompok-1
+```
+
+2️⃣ **Install Dependencies**
+
+```bash
+flutter pub get
+```
+
+3️⃣ **Verifikasi Instalasi**
+
+```bash
+flutter doctor
+```
+
+4️⃣ **Jalankan Aplikasi**
+
+```bash
+# Debug mode
+flutter run
+
+# Release mode (Android)
+flutter run --release
+
+# Untuk device/emulator spesifik
+flutter run -d <device_id>
+```
+
+### Troubleshooting
+
+**Problem:** `flutter: command not found`
+```bash
+# Solusi: Tambahkan Flutter ke PATH
+export PATH="$PATH:`pwd`/flutter/bin"
+```
+
+**Problem:** Gradle build failed
+```bash
+# Solusi: Clean dan rebuild
+flutter clean
+flutter pub get
+flutter run
+```
+
+---
+
+## 📁 Struktur Project
+
+```
+project-kelompok-1/
+├── android/              # Platform Android
+├── ios/                  # Platform iOS
+├── lib/
+│   ├── models/          # Data models
+│   ├── screens/         # UI screens
+│   ├── widgets/         # Reusable widgets
+│   ├── services/        # API services
+│   ├── utils/           # Helper functions
+│   └── main.dart        # Entry point
+├── assets/
+│   ├── images/          # Image assets
+│   └── fonts/           # Custom fonts
+├── test/                # Unit tests
+├── pubspec.yaml         # Dependencies
+└── README.md
+```
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+| Home Screen | Faculty List | Program Details |
+|-------------|--------------|-----------------|
+| ![Home](link) | ![Faculty](link) | ![Program](link) |
+
+</div>
+
+---
+
+## 👥 Tim Pengembang
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/wahyualvyy">
+        <img src="https://github.com/wahyualvyy.png" width="100px;" alt=""/><br />
+        <sub><b>Wahyu Alvy</b></sub>
+      </a><br />
+      <sub>Project Lead & Developer</sub>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://via.placeholder.com/100" width="100px;" alt=""/><br />
+        <sub><b>[Nama Anggota 2]</b></sub>
+      </a><br />
+      <sub>UI/UX Designer</sub>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://via.placeholder.com/100" width="100px;" alt=""/><br />
+        <sub><b>[Nama Anggota 3]</b></sub>
+      </a><br />
+      <sub>Backend Developer</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🤝 Kontribusi
+
+Kami sangat menghargai setiap kontribusi! Berikut panduan untuk berkontribusi:
+
+### Cara Berkontribusi
+
+1. **Fork** repository ini
+2. **Clone** fork Anda
+   ```bash
+   git clone https://github.com/username-anda/project-kelompok-1.git
+   ```
+3. **Buat branch** untuk fitur baru
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+4. **Commit** perubahan Anda
+   ```bash
+   git commit -m 'Add: Menambahkan fitur amazing'
+   ```
+5. **Push** ke branch
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+6. Buat **Pull Request**
+
+### Commit Convention
+
+Gunakan format commit yang jelas:
+
+```
+Add: menambahkan fitur baru
+Fix: memperbaiki bug
+Update: memperbarui fitur existing
+Remove: menghapus fitur
+Docs: update dokumentasi
+```
+
+---
+
+## 📝 Changelog
+
+### Version 1.0.0 (November 2025)
+- ✨ Initial release
+- ✅ Implementasi fitur dasar profil universitas
+- ✅ Navigasi dan routing aplikasi
+- ✅ Integrasi UI components
+
+### Version 0.1.0 (Oktober 2025)
+- 🎉 Project initialization
+- 📱 Setup Flutter project structure
+
+---
+
+## 📄 Lisensi
+
+Project ini dilisensikan di bawah **MIT License**. Lihat file [LICENSE](LICENSE) untuk informasi lebih lanjut.
+
+```
+MIT License
+
+Copyright (c) 2025 Project Kelompok 1
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software")...
+```
+
+---
+
+## 📞 Kontak & Support
+
+Jika Anda memiliki pertanyaan atau memerlukan bantuan:
+
+- 📧 Email: [project.email@university.ac.id]
+- 🌐 Website: [https://university.ac.id]
+- 💬 Discord: [Link Server Discord]
+- 🐛 Issues: [GitHub Issues](https://github.com/wahyualvyy/project-kelompok-1/issues)
+
+---
+
+## 🙏 Acknowledgments
+
+Terima kasih kepada:
+
+- Flutter Team untuk framework yang luar biasa
+- Dosen pembimbing yang telah memberikan arahan
+- Komunitas Flutter Indonesia
+- Semua kontributor project ini
+
+---
+
+<div align="center">
+
+**⭐ Jika project ini bermanfaat, jangan lupa berikan star! ⭐**
+
+Made with ❤️ by Tim Kelompok 1
+
+</div>
+>>>>>>> main
