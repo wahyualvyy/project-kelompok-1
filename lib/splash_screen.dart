@@ -117,7 +117,7 @@ class _SplashScreenState extends State<SplashScreen>
             FadeTransition(
               opacity: _fadeAnimation,
               child: Text(
-                'Universitas App',
+                'Universitas Muhammadiyah Sidoarjo',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
