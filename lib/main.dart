@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
+import '/pages/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,11 +10,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'University App',
+      title: 'UMSIDA App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Roboto',
       ),
-      home: SplashScreen(), // Mulai dari splash screen
+      home: SplashScreen(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
+import '/pages/home_page.dart'; // <— tambahkan ini
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -18,10 +19,8 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     
-    // Set status bar transparent
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     
-    // Setup animasi
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 2),
@@ -43,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
     
     _animationController.forward();
     
-    // Navigate setelah 3 detik
+    // Navigasi ke halaman utama
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -81,7 +80,6 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Logo dengan animasi
             ScaleTransition(
               scale: _scaleAnimation,
               child: FadeTransition(
@@ -105,31 +103,27 @@ class _SplashScreenState extends State<SplashScreen>
                     size: 80,
                     color: Color(0xFF4158D0),
                   ),
-                  // Atau gunakan Image.asset untuk logo
-                  // child: Image.asset('assets/images/logo.png'),
                 ),
               ),
             ),
             
             SizedBox(height: 30),
             
-            // Nama aplikasi
             FadeTransition(
               opacity: _fadeAnimation,
               child: Text(
                 'Universitas Muhammadiyah Sidoarjo',
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  letterSpacing: 2,
+                  letterSpacing: 1,
                 ),
               ),
             ),
             
             SizedBox(height: 10),
             
-            // Tagline
             FadeTransition(
               opacity: _fadeAnimation,
               child: Text(
@@ -144,7 +138,6 @@ class _SplashScreenState extends State<SplashScreen>
             
             SizedBox(height: 50),
             
-            // Loading indicator
             FadeTransition(
               opacity: _fadeAnimation,
               child: CircularProgressIndicator(
@@ -155,16 +148,6 @@ class _SplashScreenState extends State<SplashScreen>
           ],
         ),
       ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Home Page')),
-      body: Center(child: Text('Welcome!')),
     );
   }
 }
