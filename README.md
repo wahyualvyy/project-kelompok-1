@@ -267,9 +267,9 @@ project-kelompok-1/
     <td align="center">
       <a href="https://github.com/wahyualvyy">
         <img src="https://github.com/wahyualvyy.png" width="100px;" alt=""/><br />
-        <sub><b>Alex</b></sub>
+        <sub><b>Wahyu Alvy</b></sub>
       </a><br />
-      <sub>Developer</sub>
+      <sub>Front End Developer</sub>
     </td>
     <td align="center">
       <a href="#">
