@@ -267,23 +267,30 @@ project-kelompok-1/
     <td align="center">
       <a href="https://github.com/wahyualvyy">
         <img src="https://github.com/wahyualvyy.png" width="100px;" alt=""/><br />
-        <sub><b>Wahyu Alvy</b></sub>
+        <sub><b>Alex</b></sub>
       </a><br />
-      <sub>Project Lead & Developer</sub>
+      <sub>Developer</sub>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://via.placeholder.com/100" width="100px;" alt=""/><br />
-        <sub><b>[Nama Anggota 2]</b></sub>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFMLUqJ-UlldA/profile-displayphoto-shrink_800_800/B4DZU9ZQGYG8Ac-/0/1740491788452?e=1763596800&v=beta&t=fCDuPqcHP3knX-1fGKiI6mII7ipQVqxYsg_g2ePpAKE" width="100px;" alt=""/><br />
+        <sub><b>Hafizh Fattah</b></sub>
       </a><br />
       <sub>UI/UX Designer</sub>
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://via.placeholder.com/100" width="100px;" alt=""/><br />
-        <sub><b>[Nama Anggota 3]</b></sub>
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQGGyuWMlbbp2A/profile-displayphoto-scale_200_200/B56ZeCMTXbH8Ac-/0/1750235953229?e=1763596800&v=beta&t=KmT72ak4DUjBXmv9EEbMi6K8Rgz8krtzV0sstiqWMxw" width="100px;" alt=""/><br />
+        <sub><b>Ditta Adelia</b></sub>
       </a><br />
-      <sub>Backend Developer</sub>
+      <sub>Front End Developer</sub>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/202598155?v=4" width="100px;" alt=""/><br />
+        <sub><b>Luluk Asti</b></sub>
+      </a><br />
+      <sub>UI/UX Developer</sub>
     </td>
   </tr>
 </table>
@@ -299,7 +306,7 @@ Kami sangat menghargai setiap kontribusi! Berikut panduan untuk berkontribusi:
 1. **Fork** repository ini
 2. **Clone** fork Anda
    ```bash
-   git clone https://github.com/username-anda/project-kelompok-1.git
+   git clone https://github.com/wahyualvyy/project-kelompok-1.git
    ```
 3. **Buat branch** untuk fitur baru
    ```bash
