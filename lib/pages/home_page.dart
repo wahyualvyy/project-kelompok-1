@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -80,10 +81,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // AppBar Modern dengan Warna Biru
+  // AppBar Modern dengan Logo yang Diperbaiki
   Widget _buildAppBar() {
     return SliverAppBar(
-      expandedHeight: 140,
+      expandedHeight: 150,
       floating: false,
       pinned: true,
       stretch: true,
@@ -96,19 +97,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Image.asset(
-                    'assets/icons/logo-umsida.png',
-                    width: 80,
-                    height: 80,
-                  ),
-                ),
-                SizedBox(width: 10),
+                // Logo Container dengan White Background
+                Container(),
+                SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
@@ -145,14 +136,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Color(0xFF1565C0), // Blue 700
-                    Color(0xFF1976D2), // Blue 600
-                    Color(0xFF0D47A1), // Blue 900
+                    Color(0xFF1565C0),
+                    Color(0xFF1976D2),
+                    Color(0xFF0D47A1),
                   ],
                 ),
               ),
             ),
-            // Decorative circles
             Positioned(
               top: -40,
               right: -40,
@@ -193,7 +183,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
       ),
       actions: [
-        // Search Button
         IconButton(
           icon: Container(
             padding: EdgeInsets.all(8),
@@ -208,7 +197,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           },
         ),
         SizedBox(width: 4),
-        // Notification Button with Badge
         Stack(
           children: [
             IconButton(
@@ -248,7 +236,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ],
         ),
         SizedBox(width: 4),
-        // Profile Button
         Padding(
           padding: EdgeInsets.only(right: 16, top: 8, bottom: 8),
           child: InkWell(
@@ -284,7 +271,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Search Dialog
   void _showSearchDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -342,7 +328,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Notification Dialog
   void _showNotificationDialog(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -480,7 +465,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Profile Menu
   void _showProfileMenu(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -570,7 +554,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Column(
             children: [
-              Icon(Icons.school, size: 60, color: Color(0xFF1565C0)),
+              // Logo dengan Background Putih di Dialog
+              Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Color(0xFF1565C0).withOpacity(0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Image.asset(
+                  'assets/icons/logo-umsida.png',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.contain,
+                ),
+              ),
               SizedBox(height: 10),
               Text('UMSIDA App'),
             ],
@@ -607,7 +604,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Welcome Banner dengan Student Card Style
   Widget _buildWelcomeBanner() {
     return Container(
       margin: EdgeInsets.all(16),
@@ -620,8 +616,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF1565C0), // Blue 700
-                  Color(0xFF1976D2), // Blue 600
+                  Color(0xFF1565C0),
+                  Color(0xFF1976D2),
                 ],
               ),
               borderRadius: BorderRadius.circular(20),
@@ -723,28 +719,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ],
                 ),
                 SizedBox(height: 8),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.public, color: Colors.white, size: 16),
-                      SizedBox(width: 6),
-                      Text(
-                        'www.umsida.ac.id',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ],
             ),
           ),
@@ -753,7 +727,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // University Info Card
   Widget _buildUniversityInfo() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
@@ -772,16 +745,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       child: Column(
         children: [
+          // Logo dengan White Background dan Shadow
           Container(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Color(0xFF1565C0).withOpacity(0.1),
+              color: Colors.white,
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFF1565C0).withOpacity(0.15),
+                  blurRadius: 15,
+                  offset: Offset(0, 5),
+                ),
+              ],
+              border: Border.all(
+                color: Color(0xFF1565C0).withOpacity(0.1),
+                width: 2,
+              ),
             ),
             child: Image.asset(
               'assets/icons/logo-umsida.png',
-              width: 80,
-              height: 80,
+              width: 50,
+              height: 50,
+              fit: BoxFit.contain,
             ),
           ),
           SizedBox(height: 15),
@@ -799,7 +785,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Statistics Card
   Widget _buildStatisticsCard() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
@@ -852,7 +837,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Menu Informasi - Style Modern dengan Navigasi
   Widget _buildMenuInformasi() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -881,71 +865,55 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               _buildMenuCard(
                 icon: Icons.info_outline,
                 label: 'Profil',
-                color: Color(0xFF1565C0), // Blue 700
+                color: Color(0xFF1565C0),
                 onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilKampusPage()));
-                  _showComingSoon(context, 'Profil Kampus');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilPage()),
+                  );
                 },
               ),
               _buildMenuCard(
                 icon: Icons.visibility_outlined,
                 label: 'Visi\nMisi',
-                color: Color(0xFF0288D1), // Light Blue 700
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => VisiMisiPage()));
-                  _showComingSoon(context, 'Visi & Misi');
-                },
+                color: Color(0xFF0288D1),
+                onTap: () => _showComingSoon(context, 'Visi & Misi'),
               ),
               _buildMenuCard(
                 icon: Icons.account_balance,
                 label: 'Fakultas\nProdi',
-                color: Color(0xFF0D47A1), // Blue 900
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => FakultasProdiPage()));
-                  _showComingSoon(context, 'Fakultas & Prodi');
-                },
+                color: Color(0xFF0D47A1),
+                onTap: () => _showComingSoon(context, 'Fakultas & Prodi'),
               ),
               _buildMenuCard(
                 icon: Icons.collections_outlined,
                 label: 'Galeri',
-                color: Color(0xFF1976D2), // Blue 600
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => GaleriPage()));
-                  _showComingSoon(context, 'Galeri Kampus');
-                },
+                color: Color(0xFF1976D2),
+                onTap: () => _showComingSoon(context, 'Galeri Kampus'),
               ),
               _buildMenuCard(
                 icon: Icons.location_on_outlined,
                 label: 'Kontak\nLokasi',
-                color: Color(0xFF01579B), // Blue A700
-                onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => KontakLokasiPage()));
-                  _showComingSoon(context, 'Kontak & Lokasi');
-                },
+                color: Color(0xFF01579B),
+                onTap: () => _showComingSoon(context, 'Kontak & Lokasi'),
               ),
               _buildMenuCard(
                 icon: Icons.calendar_today_outlined,
                 label: 'Kalender',
-                color: Color(0xFF03A9F4), // Light Blue 500
-                onTap: () {
-                  _showComingSoon(context, 'Kalender Akademik');
-                },
+                color: Color(0xFF03A9F4),
+                onTap: () => _showComingSoon(context, 'Kalender Akademik'),
               ),
               _buildMenuCard(
                 icon: Icons.library_books_outlined,
                 label: 'Berita',
-                color: Color(0xFF2196F3), // Blue 500
-                onTap: () {
-                  _showComingSoon(context, 'Berita & Pengumuman');
-                },
+                color: Color(0xFF2196F3),
+                onTap: () => _showComingSoon(context, 'Berita & Pengumuman'),
               ),
               _buildMenuCard(
                 icon: Icons.more_horiz,
                 label: 'Lainnya',
-                color: Color(0xFF455A64), // Blue Grey 700
-                onTap: () {
-                  _showMenuLainnya(context);
-                },
+                color: Color(0xFF455A64),
+                onTap: () => _showMenuLainnya(context),
               ),
             ],
           ),
@@ -1005,7 +973,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Quick Notification Section
   Widget _buildQuickNotification() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1095,7 +1062,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Footer
   Widget _buildFooter() {
     return Container(
       width: double.infinity,
@@ -1107,16 +1073,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       child: Column(
         children: [
+          // Logo di Footer dengan Background Putih
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white,
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
+                ),
+              ],
             ),
             child: Image.asset(
               'assets/icons/logo-umsida.png',
-              width: 80,
-              height: 80,
+              width: 45,
+              height: 45,
+              fit: BoxFit.contain,
             ),
           ),
           SizedBox(height: 15),
@@ -1177,7 +1152,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // Helper Functions
   void _showComingSoon(BuildContext context, String pageName) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
