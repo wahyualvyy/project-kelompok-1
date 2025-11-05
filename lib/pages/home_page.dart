@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profile_page.dart';
+import 'visi_misi.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -877,7 +878,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 icon: Icons.visibility_outlined,
                 label: 'Visi\nMisi',
                 color: Color(0xFF0288D1),
-                onTap: () => _showComingSoon(context, 'Visi & Misi'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VisiMisiPage()),
+                  );
+                },
               ),
               _buildMenuCard(
                 icon: Icons.account_balance,
