@@ -57,8 +57,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 _buildStatisticsCard(),
                 SizedBox(height: 30),
                 _buildMenuInformasi(),
-                SizedBox(height: 30),
-                _buildQuickNotification(),
                 SizedBox(height: 40),
                 _buildFooter(),
               ],
@@ -983,95 +981,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildQuickNotification() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Notifikasi',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Lihat semua',
-                  style: TextStyle(color: Color(0xFF1565C0)),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 10),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 16),
-          padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.green.shade50,
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.green.shade200),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Icon(Icons.announcement, color: Colors.white, size: 20),
-              ),
-              SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Pendaftaran Program Magang',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        color: Colors.black87,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Ayo daftarkan diri kamu dan dapatkan pengalaman di perusahaan ternama!',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey.shade700,
-                        height: 1.4,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      'Batas: 25 Nov 2025',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: Colors.green.shade700,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Icon(Icons.close, size: 18, color: Colors.grey),
-            ],
-          ),
-        ),
-      ],
     );
   }
 
