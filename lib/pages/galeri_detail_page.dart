@@ -7,39 +7,74 @@ final List<Map<String, String>> allPhotosData = [
   // Kategori gedung
   {
     'imageUrl': 'assets/images/gedung1.jpg',
-    'title': 'Gedung Rektorat',
+    'title': 'Kampus 1 Tampak Atas',
     'location': 'Kampus 1',
     'category': 'Gedung', 
   },
   {
-    'imageUrl': 'images/gedung2.jpg',
-    'title': 'GKB 2',
+    'imageUrl': 'assets/images/gedung2.jpg',
+    'title': 'Gedung Kuliah Bersama',
+    'location': 'Kampus 1',
+    'category': 'Gedung', 
+  },
+  {
+    'imageUrl': 'assets/images/gedung3.jpg',
+    'title': 'Gedung Kuliah Bersama',
     'location': 'Kampus 3',
-    'category': 'Gedung',
+    'category': 'Gedung', 
   },
   {
-    'imageUrl': 'images/gedung3.jpg',
-    'title': 'Perpustakaan Pusat',
+    'imageUrl': 'assets/images/gedung4.jpg',
+    'title': 'Gedung FKG',
     'location': 'Kampus 1',
     'category': 'Gedung', 
   },
   {
-    'imageUrl': 'images/gedung4.jpg',
-    'title': 'Ruang Baca',
-    'location': 'Kampus 1',
-    'category': 'Gedung',
-  },
-  {
-    'imageUrl': 'images/gedung5.jpg',
-    'title': 'Kantin GKB 1',
+    'imageUrl': 'assets/images/gedung5.jpg',
+    'title': 'Kantor Pusat',
     'location': 'Kampus 1',
     'category': 'Gedung', 
   },
   {
-    'imageUrl': 'images/labgigi.jpg',
-    'title': 'Lab Komputer',
+    'imageUrl': 'assets/images/gedung6.jpg',
+    'title': 'Gedung Kuliah Bersama',
+    'location': 'Kampus 2',
+    'category': 'Gedung', 
+  },
+
+  // Perpustakaan
+   {
+    'imageUrl': 'assets/images/perpus.jpg',
+    'title': 'Perpustakaan',
+    'location': 'Kampus 1',
+    'category': 'Perpustakaan', 
+  },
+  // Fasilitas Umum
+   {
+    'imageUrl': 'assets/images/umum1.jpeg',
+    'title': 'Masjid An-Nur',
+    'location': 'Kampus 1',
+    'category': 'Fasilitas Umum', 
+  },
+   {
+    'imageUrl': 'assets/images/umum3.jpg',
+    'title': 'Masjid Baiturrahman',
     'location': 'Kampus 2',
     'category': 'Fasilitas Umum', 
+  },
+ 
+  // Fasilitas Kesehatan
+   {
+    'imageUrl': 'assets/images/kesehatan4.jpg',
+    'title': 'Masjid An-Nur',
+    'location': 'Kampus 1',
+    'category': 'Fasilitas Kesehatan', 
+  },
+   {
+    'imageUrl': 'assets/images/kesehatan2.jpg',
+    'title': 'Masjid Baiturrahman',
+    'location': 'Kampus 2',
+    'category': 'Fasilitas Kesehatan', 
   },
  
 ];
