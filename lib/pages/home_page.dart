@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile_page.dart';
 import 'visi_misi.dart';
+import 'galeri.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -895,7 +896,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 icon: Icons.collections_outlined,
                 label: 'Galeri',
                 color: Color(0xFF1976D2),
-                onTap: () => _showComingSoon(context, 'Galeri Kampus'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GaleriPage()),
+                  );
+                },
+                
               ),
               _buildMenuCard(
                 icon: Icons.location_on_outlined,
