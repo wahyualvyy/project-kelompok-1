@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile_page.dart';
 import 'visi_misi.dart';
+import 'kontak_lokasi.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -899,7 +900,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 icon: Icons.location_on_outlined,
                 label: 'Kontak\nLokasi',
                 color: Color(0xFF01579B),
-                onTap: () => _showComingSoon(context, 'Kontak & Lokasi'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => KontakLokasiPage()),
+                  );
+                },
               ),
               _buildMenuCard(
                 icon: Icons.calendar_today_outlined,
