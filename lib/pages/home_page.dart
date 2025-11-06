@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'profile_page.dart';
 import 'visi_misi.dart';
-import 'galeri.dart';
+import 'galeri.dart' hide MyApp;
+import 'Fakultas_dan_prodi.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -81,7 +82,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // AppBar Modern dengan Logo yang Diperbaiki
   Widget _buildAppBar() {
     return SliverAppBar(
       expandedHeight: 150,
@@ -97,7 +97,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             Row(
               children: [
-                // Logo Container dengan White Background
                 Container(),
                 SizedBox(width: 12),
                 Column(
@@ -234,38 +233,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
           ],
-        ),
-        SizedBox(width: 4),
-        Padding(
-          padding: EdgeInsets.only(right: 16, top: 8, bottom: 8),
-          child: InkWell(
-            onTap: () {
-              _showProfileMenu(context);
-            },
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
-                  width: 1,
-                ),
-              ),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 14,
-                    backgroundColor: Colors.white.withOpacity(0.3),
-                    child: Icon(Icons.person, size: 16, color: Colors.white),
-                  ),
-                  SizedBox(width: 6),
-                  Icon(Icons.arrow_drop_down, color: Colors.white, size: 18),
-                ],
-              ),
-            ),
-          ),
         ),
       ],
     );
@@ -465,145 +432,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  void _showProfileMenu(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) {
-        return Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 12),
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              SizedBox(height: 20),
-              CircleAvatar(
-                radius: 40,
-                backgroundColor: Color(0xFF1565C0).withOpacity(0.1),
-                child: Icon(Icons.person, size: 40, color: Color(0xFF1565C0)),
-              ),
-              SizedBox(height: 15),
-              Text(
-                'Pengunjung',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                'visitor@umsida.ac.id',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 14,
-                ),
-              ),
-              SizedBox(height: 20),
-              Divider(height: 1),
-              ListTile(
-                leading: Icon(Icons.settings, color: Color(0xFF1565C0)),
-                title: Text('Pengaturan'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showComingSoon(context, 'Pengaturan');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.help_outline, color: Color(0xFF1565C0)),
-                title: Text('Bantuan'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showComingSoon(context, 'Bantuan');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.info_outline, color: Color(0xFF1565C0)),
-                title: Text('Tentang Aplikasi'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showAboutDialog(context);
-                },
-              ),
-              SizedBox(height: 20),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  void _showAboutDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: Column(
-            children: [
-              // Logo dengan Background Putih di Dialog
-              Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Color(0xFF1565C0).withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Image.asset(
-                  'assets/icons/logo-umsida.png',
-                  width: 50,
-                  height: 50,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text('UMSIDA App'),
-            ],
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Versi 1.0.0',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Aplikasi Profil Universitas Muhammadiyah Sidoarjo',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey),
-              ),
-              SizedBox(height: 15),
-              Text(
-                '© 2025 Tim Pengembang\nKelompok 1',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 12, color: Colors.grey),
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Tutup'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   Widget _buildWelcomeBanner() {
     return Container(
       margin: EdgeInsets.all(16),
@@ -745,7 +573,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       child: Column(
         children: [
-          // Logo dengan White Background dan Shadow
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -855,76 +682,83 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         SizedBox(height: 15),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          child: GridView.count(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            crossAxisCount: 4,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
+          child: Column(
             children: [
-              _buildMenuCard(
-                icon: Icons.info_outline,
-                label: 'Profil',
-                color: Color(0xFF1565C0),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfilPage()),
-                  );
-                },
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildMenuCardLarge(
+                      icon: Icons.info_outline,
+                      label: 'Profil',
+                      color: Color(0xFF1565C0),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProfilPage()),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: _buildMenuCardLarge(
+                      icon: Icons.visibility_outlined,
+                      label: 'Visi & Misi',
+                      color: Color(0xFF0288D1),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => VisiMisiPage()),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
-              _buildMenuCard(
-                icon: Icons.visibility_outlined,
-                label: 'Visi\nMisi',
-                color: Color(0xFF0288D1),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => VisiMisiPage()),
-                  );
-                },
+              SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildMenuCardLarge(
+                      icon: Icons.account_balance,
+                      label: 'Fakultas & Prodi',
+                      color: Color(0xFF0D47A1),
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FakultasDanProdi()),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: _buildMenuCardLarge(
+                      icon: Icons.collections_outlined,
+                      label: 'Galeri',
+                      color: Color(0xFF1976D2),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => GaleriPage()),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
-              _buildMenuCard(
-                icon: Icons.account_balance,
-                label: 'Fakultas\nProdi',
-                color: Color(0xFF0D47A1),
-                onTap: () => _showComingSoon(context, 'Fakultas & Prodi'),
-              ),
-              _buildMenuCard(
-                icon: Icons.collections_outlined,
-                label: 'Galeri',
-                color: Color(0xFF1976D2),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GaleriPage()),
-                  );
-                },
-                
-              ),
-              _buildMenuCard(
-                icon: Icons.location_on_outlined,
-                label: 'Kontak\nLokasi',
-                color: Color(0xFF01579B),
-                onTap: () => _showComingSoon(context, 'Kontak & Lokasi'),
-              ),
-              _buildMenuCard(
-                icon: Icons.calendar_today_outlined,
-                label: 'Kalender',
-                color: Color(0xFF03A9F4),
-                onTap: () => _showComingSoon(context, 'Kalender Akademik'),
-              ),
-              _buildMenuCard(
-                icon: Icons.library_books_outlined,
-                label: 'Berita',
-                color: Color(0xFF2196F3),
-                onTap: () => _showComingSoon(context, 'Berita & Pengumuman'),
-              ),
-              _buildMenuCard(
-                icon: Icons.more_horiz,
-                label: 'Lainnya',
-                color: Color(0xFF455A64),
-                onTap: () => _showMenuLainnya(context),
+              SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildMenuCardLarge(
+                      icon: Icons.location_on_outlined,
+                      label: 'Kontak & Lokasi',
+                      color: Color(0xFF01579B),
+                      onTap: () => _showComingSoon(context, 'Kontak & Lokasi'),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
@@ -933,7 +767,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  Widget _buildMenuCard({
+  Widget _buildMenuCardLarge({
     required IconData icon,
     required String label,
     required Color color,
@@ -945,6 +779,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Container(
+          padding: EdgeInsets.symmetric(vertical: 18),
           decoration: BoxDecoration(
             color: color.withOpacity(0.1),
             borderRadius: BorderRadius.circular(16),
@@ -956,22 +791,22 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.15),
+                  color: color.withOpacity(0.2),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(icon, size: 28, color: color),
+                child: Icon(icon, size: 32, color: color),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 10),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
+                padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
                   label,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: color,
-                    height: 1.2,
+                    height: 1.3,
                   ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -995,7 +830,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       child: Column(
         children: [
-          // Logo di Footer dengan Background Putih
           Container(
             padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -1091,69 +925,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         duration: Duration(seconds: 2),
       ),
-    );
-  }
-
-  void _showMenuLainnya(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return Container(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Menu Lainnya',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 20),
-              ListTile(
-                leading: Icon(Icons.book, color: Color(0xFF1565C0)),
-                title: Text('E-Learning'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showComingSoon(context, 'E-Learning');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.description, color: Color(0xFF1565C0)),
-                title: Text('Dokumen Akademik'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showComingSoon(context, 'Dokumen Akademik');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.support_agent, color: Color(0xFF1565C0)),
-                title: Text('Bantuan & Dukungan'),
-                trailing: Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.pop(context);
-                  _showComingSoon(context, 'Bantuan');
-                },
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }
