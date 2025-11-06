@@ -3,6 +3,7 @@ import 'profile_page.dart';
 import 'visi_misi.dart';
 import 'galeri.dart' hide MyApp;
 import 'Fakultas_dan_prodi.dart';
+import 'kontak_lokasi.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -708,7 +709,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => VisiMisiPage()),
+                          MaterialPageRoute(
+                              builder: (context) => VisiMisiPage()),
                         );
                       },
                     ),
@@ -723,10 +725,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       icon: Icons.account_balance,
                       label: 'Fakultas & Prodi',
                       color: Color(0xFF0D47A1),
-                      onTap: (){
+                      onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FakultasDanProdi()),
+                          MaterialPageRoute(
+                              builder: (context) => FakultasDanProdi()),
                         );
                       },
                     ),
@@ -755,7 +758,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       icon: Icons.location_on_outlined,
                       label: 'Kontak & Lokasi',
                       color: Color(0xFF01579B),
-                      onTap: () => _showComingSoon(context, 'Kontak & Lokasi'),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => KontakLokasiPage()),
+                        );
+                      },
                     ),
                   )
                 ],
@@ -904,26 +913,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           shape: BoxShape.circle,
         ),
         child: Icon(icon, color: Colors.white, size: 20),
-      ),
-    );
-  }
-
-  void _showComingSoon(BuildContext context, String pageName) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Row(
-          children: [
-            Icon(Icons.info_outline, color: Colors.white),
-            SizedBox(width: 12),
-            Expanded(
-              child: Text('Halaman $pageName sedang dalam pengembangan'),
-            ),
-          ],
-        ),
-        backgroundColor: Color(0xFF1565C0),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        duration: Duration(seconds: 2),
       ),
     );
   }
